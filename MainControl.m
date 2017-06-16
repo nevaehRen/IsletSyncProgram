@@ -1,5 +1,8 @@
 addpath('/Users/Nevaeh/Documents/MATLAB/kim/experimental/program')
 
+
+
+
 clear;
 clc;
 close all;
