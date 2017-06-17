@@ -144,10 +144,10 @@ set(h,'edgecolor',[0.2 0.2 0.2])
 
 
 for j=randi(Output.cn)
-subplot(2,1,2)
+subplot(1,2,2)
 plot(P,Signal(j,:))
-subplot(2,1,1)
-plot(Output.Time,Output.Cell(j).Signal,'r');
+subplot(1,2,1)
+plot(1:3:Output,Output.Cell(i).Signal(i),'ro');
 
 j
 pause(0.5)
