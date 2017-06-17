@@ -47,7 +47,7 @@ Output.cn   = cn;
 
 % 3. Generate Signal
 
-for i = 1%:cn
+for i = 1:cn
 
 
 flag=ROIsMask(RoIs,i,pix);
@@ -69,7 +69,7 @@ Output.Cell(i).Signal     = Signal;
 
 end
 
-F1_GenerateMovie(Output,pwd,[])
+% F1_GenerateMovie(Output,pwd,[])
 
 save Output.mat
 
