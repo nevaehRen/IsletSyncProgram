@@ -1,5 +1,5 @@
-addpath('J:\2. MATLAB Programs\24.kim\IsletSyncProgram')
-% addpath('/Users/Nevaeh/Documents/MATLAB/kim/experimental/IsletSyncProgram')
+
+addpath('/Users/Nevaeh/Documents/MATLAB/kim/experimental/IsletSyncProgram')
 clear;
 clc;
 close all;
@@ -117,42 +117,21 @@ end
 
 
 
-%% ................................ %%
-%% --3--.  generate traces 
+figure(4)
 
-
-Signal=[];
-
-for i=1:Output.cn
-[Period,P_temp]  =  FFT_CellTrace(Output.Cell(i).Signal);
-
-Signal=[Signal; P_temp(end:-1:1)'];
-
+for i=1%randi(Output.cn)
+    hold on
+plot(1:3:530*3,Output.Cell(i).Signal,'color',[0.5 0.5 0.5],'linewidth',1);
+plot(1:3:530*3,smooth(Output.Cell(i).Signal),'linewidth',2)
 end
 
 
-figure(3)
-set(gcf,'color',[1 1 1])
-P = Period(end:-1:1);
-[X Y]=meshgrid(P,1:Output.cn);
-
-h = surf(X,Y,Signal)
-colormap(summer)
-set(h,'edgecolor',[0.2 0.2 0.2])
 
 
+FFT_Cell = fft(Output.Cell(1).Signal')
 
 
-for j=randi(Output.cn)
-subplot(2,1,2)
-plot(P,Signal(j,:))
-subplot(2,1,1)
-plot(Output.Time,Output.Cell(j).Signal,'r');
-
-j
-pause(0.5)
-end
-
+plot(FFT_Cell)
 
 
 
