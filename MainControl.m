@@ -1,5 +1,4 @@
 
-hello
 addpath('/Users/Nevaeh/Documents/MATLAB/kim/experimental/IsletSyncProgram')
 clear;
 clc;
